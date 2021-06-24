@@ -2,7 +2,7 @@ import { IState, ITask, IChangeInfo } from './state'
 import { ADD_TASK, REMOVE_TASK, CHANGE_TASK_STATUS } from '@/store/mutation-types'
 export const mutations = {
   [ADD_TASK]: (state: IState, task: ITask) => {
-    state.tasks.push(task)
+    state.tasks.unshift(task)
   },
   [REMOVE_TASK]: (state: IState, taskId: number) => {
     state.tasks = state.tasks.filter(task => task.id !== taskId)

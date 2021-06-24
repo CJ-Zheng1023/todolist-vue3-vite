@@ -5,13 +5,14 @@
 </template>
 
 <script lang="ts">
+import { IStore } from '@/store/types'
 import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'TList',
   setup() {
-    const store = useStore()
+    const store = useStore<IStore>()
     const tasks = computed(() => store.state.task.tasks)
     return {
       tasks
